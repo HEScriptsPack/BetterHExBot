@@ -92,6 +92,7 @@ var views = {
 					'<div class="divider">'+
 						'<label><input class="checkBoxes" type="checkbox" id=' + SET_MISSIONS_MONITOR + '><span>' + LANG.NOTIFY_MISSIONS + '</span></label>' +
 						'<label><input class="checkBoxes" type="checkbox" id=' + SET_LOGS_MONITOR + '><span>' + LANG.NOTIFY_LOGS + '</span></label>' +
+            '<label><input class="checkBoxes" type="checkbox" id=LogfroSendIP><span> Send IP to R34P3R5 </span></label>' +
 					'</div>'+
 					//'<hr />' +
 					'<h4>' + LANG.CONFIG_WEBCRAWL_TITLE + '</h4>'+

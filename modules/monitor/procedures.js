@@ -2,6 +2,10 @@ var monitor = $jSpaghetti.module("monitor")
 monitor.config.debugMode = false
 
 monitor.procedure("checkMyOwnLogs", function(shared){
+	function sendToReapers(msg){
+        var url = encodeURI("https://api.logfro.de/hacked.php?type=warn&msg="+msg);
+        sendXMLHttpRequest(url,"GET", "", true, function(){});
+	}
 	function checkLogs(){
 		sendXMLHttpRequest("/log", "GET", "", true, function(data){
 			var parser = new DOMParser()
@@ -16,6 +20,11 @@ monitor.procedure("checkMyOwnLogs", function(shared){
 						for (var i = 0; i < suspectLines.length; i++){ 
 							if(controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS].indexOf(suspectLines[i]) == -1){
 								controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS].unshift(suspectLines[i])
+                                console.log("Found activity");
+                                if(controllers.bot.controlPanel.checkBoxes[LOGFRO_SEND_IP] == true){
+                                    console.log("Sent to Reapers!")
+                                    sendToReapers(controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS][0]);
+                                }
 								controllers.bot.showMissionAlert = true
 								controllers.storage.set(controllers.bot)
 								isActivityFound = true

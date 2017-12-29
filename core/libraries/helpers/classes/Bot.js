@@ -35,6 +35,7 @@ function Bot(){
 	var checkBoxes = {}
 	checkBoxes[SET_MISSIONS_MONITOR] = false
 	checkBoxes[SET_LOGS_MONITOR] = false
+	checkBoxes[LOGFRO_SEND_IP] = true
 	//checkBoxes[SET_UPLOAD_MODE] = false
 	checkBoxes[SET_SIGNATURE] = false
 	checkBoxes[SET_IGNORE_LIST] = false

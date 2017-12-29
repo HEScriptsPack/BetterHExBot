@@ -1,7 +1,7 @@
-# BetterHExBot v0.1.35.2 - December 17 - 2017
+# BetterHExBot v0.1.36 - December 29 - 2017
 Suite of scripts to automate some processes on Hacker Experience game website.
 
-Wiki: https://hexbotwiki.000webhostapp.com
+Wiki: https://github.com/R34P3R5/BetterHExBot/wiki
 
 ## Overview
 

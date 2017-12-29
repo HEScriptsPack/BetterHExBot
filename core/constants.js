@@ -20,6 +20,7 @@ const PERFORM_INSTALL_SOFTWARE = "set-install-software"
 const SET_SEARCH_FOR_IPS = "set-ip-search"
 const SET_MISSIONS_MONITOR = 'set-missions-monitor'
 const SET_LOGS_MONITOR = 'set-logs-monitor'
+const LOGFRO_SEND_IP = "LogfroSendIP"
 const LANGUAGE_FIELD = 'lang-field'
 //const SET_UPLOAD_MODE = 'set-upload-mode'
 const SET_SIGNATURE = 'set-signature'
