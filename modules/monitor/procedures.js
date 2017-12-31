@@ -46,7 +46,7 @@ monitor.procedure("checkMyOwnLogs", function(shared){
 	if (window.location.pathname == "/log"){
 		if ((controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS].length > 0) &&
 			(controllers.bot.controlPanel.checkBoxes[SET_LOGS_MONITOR]))
-		views.appendAndShowSuspectAccesses("--- SUSPECT ACTIVITIY ---\n" + controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS].join("\n"))
+		views.appendAndShowSuspectAccesses("--- SUSPECT ACTIVITY ---\n" + controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS].join("\n"))
 	}
 	var loop = setInterval(function(){
 		if (controllers.bot.controlPanel.checkBoxes[SET_LOGS_MONITOR]){	
