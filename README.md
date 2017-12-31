@@ -19,6 +19,7 @@ Functionalities:
 * Notifies about new missions and strange log activities
 * Tranfers earned money to BTC wallet automatically
 * Custom user scripts (NEW)
+* Send's IP of people who hack you directly to R34P3R'5 Scythes
 
 ## How to install
 1. Go to chrome://extensions/
