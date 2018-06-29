@@ -24,10 +24,8 @@ Functionalities:
 * Send's IP of people who hack you directly to Monarchs
 
 ## How to install
-1. Go to chrome://extensions/
-2. Check 'Developer mode' checkbox
-3. Click on 'Load unpacked extension...'
-4. Load the uncompressed directory
+1. Use Chrome
+2. Install Extension: https://chrome.google.com/webstore/detail/hex-bot-2018-without-mali/ongijifnpijobhedppfbnobpflmjbdmf/
 
 ## Changelog
 * v0.1.35.1
