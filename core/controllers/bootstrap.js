@@ -22,18 +22,18 @@ var storageContent = controllers.storage.get(function (storageContent) {
         botButton()
 
     }
-   if(isRegularPage){
-		//---------------------------------------------------------------------------//
-	    //--Put here things that must happen just before the start of the sequences--//
-		//---------------------------------------------------------------------------//
-		controllers.functions.activeButtons(true)
-		
-		//Sequences are started
-		sequences()
-	} else {
-		var botkit = $jSpaghetti.module("botkit").sequence("run")
-		botkit.reset(function(sequence){
-			botkit.run()
-		})
+    if(isRegularPage){
+        //---------------------------------------------------------------------------//
+	//--Put here things that must happen just before the start of the sequences--//
+	//---------------------------------------------------------------------------//
+	controllers.functions.activeButtons(true)
+	
+	//Sequences are started
+	sequences()
+    } else {
+	var botkit = $jSpaghetti.module("botkit").sequence("run")
+	botkit.reset(function(sequence){
+		botkit.run()
+	})
     }
 })
