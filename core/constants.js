@@ -29,15 +29,6 @@ const USEEXPLOIT = "use-exploit"
 const AUTO_CHANGE_IP = "auto-change-ip"
 const AUTO_DELETE_DDOS = "auto-delete-ddos"
 
-/*const SET_CHAT_PANEL = 'set-chat-panel'
-const CHAT_TO_MAIN = "chat-to-main"
-const CHAT_SEND_BUTTON = "chat-send"
-const CHAT_REFRESH_BUTTON = "chat-refresh"
-const CHAT_NICK_NAME = "chat-nick-name"
-const CHAT_MESSAGE = "chat-message"
-const CHAT_PANEL = 'chat-panel'
-const CHAT_AREA = "chat-area"*/
-
 const SET_MISSIONS_MONITOR = 'set-missions-monitor'
 const SET_LOGS_MONITOR = 'set-logs-monitor'
 const SET_NAME_NOTIFICATION = 'set-name-notification'

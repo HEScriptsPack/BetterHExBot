@@ -201,40 +201,6 @@ var views = {
         container.appendChild(newTextArea)
     },
 
-    drawChat: function (data) {
-        data.reverse()
-        var content =
-            '<div class="modal-body" style="max-height:150px" id="chat-div">' +
-            '<table style="border: none;border-spacing: 0;border-collapse: collapse; width:100%;">' +
-            '<thead>';
-        if ((data.length >= 50) && (data.isThereError)) {
-            content = content +
-                '<tr>' +
-                '<td style="color:yellow; background-color:black">' + LANG.QUANT_MESSAGES_SHOWING + '</td>'
-            '</tr>';
-        }
-        for (var i = 0; i < data.length; i++) {
-            var record = data[i].data
-            content = content +
-                '<tr>' +
-                '<td style="color:#80f980; background-color:black" title="Sent by someone\'s PID ' + record.pid + ' at ' + data[i].date + '">' + "<b>@" + record.scosd + "</b>: " + record.afn + '</td>'
-            '</tr>';
-        }
-        ;
-
-        content = content +
-            '</tbody>' +
-            '</table>' +
-            '</div>';
-
-        document.getElementById(CHAT_SEND_BUTTON).disabled = false
-
-        document.getElementById(CHAT_AREA).innerHTML = content;
-        var chatdiv = document.getElementById("chat-div")
-        chatdiv.scrollTop = chatdiv.scrollHeight
-        document.getElementById(CHAT_MESSAGE).value = ""
-    },
-
     switchToMainScreen: function () {
         document.getElementById(CREDITS_SCREEN_DOM_ID).style.display = "none"
         document.getElementById(MAIN_SCREEN_DOM_ID).style.display = "block"

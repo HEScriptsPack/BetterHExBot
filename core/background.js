@@ -76,18 +76,6 @@ chrome.runtime.onMessage.addListener(
                 storage[String(request.item + ":" + sender.tab.id)] = null
                 console.log("RESET request processed. Item removed (\"" + request.item + "\")")
                 break
-            case "sendmessage":
-                sendResponse({backMessage: "Request received"})
-                console.log("SENDMESSAGE request processed.")
-                var requestobj = sendXMLHttpRequestMod(request.target, "POST", request.data, true, function (response, xmlhttp) {
-                    response = response.split("%END%")[0]
-                    respond(response, sender.tab.id)
-                }, false)
-                setTimeout(function () {
-                    requestobj.xmlhttp.abort();
-                    respond(null, sender.tab.id);
-                }, 3000);
-                break
             default:
                 break
         }

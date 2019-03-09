@@ -59,8 +59,6 @@
         "modules/monitor/sequences/delegateJobs.js",
         "modules/botkit/procedures.js",
         "modules/botkit/sequences/run.js",
-        "modules/assistant/procedures.js",
-        "modules/assistant/sequences/accessChat.js",
         "modules/dbUpdate/procedures.js",
         "modules/dbUpdate/sequences/run.js",
         "modules/ddos/procedures.js",
