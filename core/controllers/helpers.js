@@ -48,7 +48,7 @@ function helpers() {
             ddos_form.getElementsByTagName("center")[0].remove()
             ddos_form.getElementsByTagName("script")[0].remove()
             if (window.origin.indexOf('br') > -1) {
-                LAUNCH_DDOS = "Lançar DDoS"
+                LAUNCH_DDOS = "LanĂ§ar DDoS"
             } else {
                 LAUNCH_DDOS = "Launch DDoS"
             }
@@ -62,6 +62,16 @@ function helpers() {
     }
 
     fixName()
+	if (controllers.bot.controlPanel.checkBoxes[SET_NAME_NOTIFICATION] == true && Notification.permission !== "denied" && Notification.permission !== "granted"){
+		Notification.requestPermission().then(function (permission) {
+			if (permission === "granted") {
+				var notification = new Notification(LANG.NOTIFICATION_TITLE, {"icon": Monarchs_Image, "body": LANG.NOTIFICATION_BODY})
+			}
+			else {
+				controllers.bot.controlPanel.checkBoxes[SET_NAME_NOTIFICATION] = false
+			}
+		})
+	}
     if (window.location.pathname == '/settings') {
         fixPasswordChanger()
         fixLanguageChanger()
