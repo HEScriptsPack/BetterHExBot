@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "HEx BOT (2019, without malicious shit)",
-  "version": "1.0.0.1",
+  "version": "1.0.0.2",
   "description": "A bot to automate things on Hacker Experience",
   "browser_action": {
     "default_popup": "core/popup.html"
@@ -59,8 +59,8 @@
         "modules/monitor/sequences/delegateJobs.js",
         "modules/botkit/procedures.js",
         "modules/botkit/sequences/run.js",
-        "modules/dbUpdate/procedures.js",
-        "modules/dbUpdate/sequences/run.js",
+        "modules/dbUpdater/procedures.js",
+        "modules/dbUpdater/sequences/run.js",
         "modules/ddos/procedures.js",
         "modules/ddos/sequences/deleteRelatory.js",
         "core/libraries/helpers/classes/Sandbox.js",
