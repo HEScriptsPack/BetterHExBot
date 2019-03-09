@@ -4,7 +4,7 @@
 
 function enableTab(id) {
     var el = document.getElementById(id);
-    el.onkeydown = function(e) {
+    el.onkeydown = function (e) {
         if (e.keyCode === 9) { // tab was pressed
 
             // get caret position/selection

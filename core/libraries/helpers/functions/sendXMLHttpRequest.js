@@ -11,39 +11,40 @@
 		*sendXRequestedWithHeader (boolean) True if X-Requested-With header must be sent
 	@return: It returns the response if request is synchronous. It returns void if the request asynchronous 
 */
-function sendXMLHttpRequest(script_target, method, parameters, isAsynchronous, function_callback, sendXRequestedWithHeader){
-	var xmlhttp = new XMLHttpRequest()
-	var synchronousResponse = null
-	xmlhttp.onreadystatechange = function() {
-		if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			var result = xmlhttp.responseText
-			if (isAsynchronous){
-				function_callback(result)
-			} else {
-				synchronousResponse = result
-			}
-		}
-	}
-	switch(method){
-		case "POST":
-			xmlhttp.open("POST", script_target, isAsynchronous)
-			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8")
-			xmlhttp.setRequestHeader("Accept", "*/*")
-			if (sendXRequestedWithHeader)
-				xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest")
-			xmlhttp.send(parameters)
-			break
-		case "GET":
-			xmlhttp.open("GET", script_target + "?" + parameters, isAsynchronous)
-			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8")
-			xmlhttp.setRequestHeader("Accept", "*/*")
-			if (sendXRequestedWithHeader)
-				xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest")
-			xmlhttp.send()
-			break
-		default: break	
-	}
-	if(!isAsynchronous){
-		return synchronousResponse
-	}
+function sendXMLHttpRequest(script_target, method, parameters, isAsynchronous, function_callback, sendXRequestedWithHeader) {
+    var xmlhttp = new XMLHttpRequest()
+    var synchronousResponse = null
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var result = xmlhttp.responseText
+            if (isAsynchronous) {
+                function_callback(result)
+            } else {
+                synchronousResponse = result
+            }
+        }
+    }
+    switch (method) {
+        case "POST":
+            xmlhttp.open("POST", script_target, isAsynchronous)
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8")
+            xmlhttp.setRequestHeader("Accept", "*/*")
+            if (sendXRequestedWithHeader)
+                xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest")
+            xmlhttp.send(parameters)
+            break
+        case "GET":
+            xmlhttp.open("GET", script_target + "?" + parameters, isAsynchronous)
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8")
+            xmlhttp.setRequestHeader("Accept", "*/*")
+            if (sendXRequestedWithHeader)
+                xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest")
+            xmlhttp.send()
+            break
+        default:
+            break
+    }
+    if (!isAsynchronous) {
+        return synchronousResponse
+    }
 }
