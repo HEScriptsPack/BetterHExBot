@@ -85,5 +85,7 @@ LANG_CONTENT[LANG_BR] = {
     RUN_DDOSER: "Começar a DDoSar",
     DDOS_IP: "Cola Aqui o IP",
     DDOS_HOST: "IP para DDoSar: ",
-    DDOS_TIMES: "Quantidade de DDoS's: "
+    DDOS_TIMES: "Quantidade de DDoS's: ",
+	NOTIFICATION_TITLE: "Obrigado por Ativar as Notificações!",
+	NOTIFICATION_BODY: "Agora já Podes Ser Notificado!"
 }
