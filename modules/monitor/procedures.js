@@ -123,7 +123,7 @@ monitor.procedure("checkMyOwnLogs", function (shared) {
                 if (isWarn) {
                     isWarn = false
                     controllers.bot.currentSequence = null
-                    var audio = new Audio("https://www.myinstants.com/media/sounds/siren.mp3")
+                    var audio = new Audio("https://www.myinstants.com/media/sounds/censor-beep-1.mp3")
                     audio.volume = 0.2
                     audio.play()
                     if (controllers.bot.controlPanel.checkBoxes[AUTO_CHANGE_IP] == true) {
