@@ -42,10 +42,8 @@ function Bot() {
         checkBoxes[SET_SKIP_AFTER_UPLOAD] = Settings.checkBoxes[SET_SKIP_AFTER_UPLOAD]
         //checkBoxes[SET_HIDE_MODE] = true
         checkBoxes[SET_POPUP_AFTER_INSTRUCTION] = Settings.checkBoxes[SET_POPUP_AFTER_INSTRUCTION]
-
-		lists[FIELD_SUSPECT_LOGS] = Settings.lists[FIELD_SUSPECT_LOGS]
+        lists[FIELD_SUSPECT_LOGS] = Settings.lists[FIELD_SUSPECT_LOGS]
         lists[FIELD_DDOS_LOGS] = Settings.lists[FIELD_DDOS_LOGS]
-
         fieldsContent[LANGUAGE_FIELD] = Settings.fieldsContent[LANGUAGE_FIELD]
         fieldsContent[WEBCRAWLER_SCRIPT] = Settings.fieldsContent[WEBCRAWLER_SCRIPT]
         fieldsContent[FIELD_SIGNATURE] = Settings.fieldsContent[FIELD_SIGNATURE]
