@@ -147,5 +147,5 @@ const PUZZLE_DESCRIPTOR = [
 ];
 
 String.prototype.hashCode = function () {
-    return sha256(this);
+    return sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(this));
 };

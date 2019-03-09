@@ -22,7 +22,7 @@
         "https://en.hackerexperience.com/*"
       ],
       "js": [
-        "core/libraries/vendor/emn178/sha256.min.js",
+        "core/libraries/vendor/sjcl/sjcl.min.js",
         "core/libraries/vendor/jSpaghetti/jSpaghetti.min.js",
         "core/libraries/vendor/jQuery/jQuery.min.js",
         "core/constants.js",
