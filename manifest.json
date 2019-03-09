@@ -24,13 +24,10 @@
 				"core/lang/de.js",
 				"core/lang/br.js",
 				"core/lang/settings.js",
-
 				"core/libraries/helpers/classes/Storage.js",
 				"core/libraries/helpers/classes/Sequence.js",
 				"core/libraries/helpers/classes/Bot.js",
-				"core/libraries/helpers/classes/BGRequest.js",
 				"core/libraries/helpers/classes/Software.js",
-
 				"modules/riddleSolver/procedures.js",
 				"modules/riddleSolver/sequences/solvePuzzle.js",
 				"modules/riddleSolver/sequences/completePath.js",
@@ -56,9 +53,7 @@
 				"modules/botkit/sequences/run.js",
 				"modules/assistant/procedures.js",
 				"modules/assistant/sequences/accessChat.js",
-
 				"core/libraries/helpers/classes/Sandbox.js",
-
 				"core/libraries/helpers/functions/strposOfArray.js",
 				"core/libraries/helpers/functions/getDOMElement.js",
 				"core/libraries/helpers/functions/goToPage.js",
@@ -81,9 +76,7 @@
 				"core/libraries/helpers/functions/getSoftwaresByPattern.js",
 				"core/libraries/helpers/functions/getSoftwareInfo.js",
 				"core/libraries/helpers/functions/enableTab.js",
-
 				"core/views.js",
-
 				"core/controllers/sequences.js",
 				"core/controllers/functions.js",
 				"core/controllers/controlPanel.js",
