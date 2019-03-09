@@ -80,11 +80,7 @@
 				"core/libraries/helpers/functions/roundNumber.js",
 				"core/libraries/helpers/functions/getSoftwaresByPattern.js",
 				"core/libraries/helpers/functions/getSoftwareInfo.js",
-				"core/libraries/helpers/functions/setBGSnippet.js",
-				"core/libraries/helpers/functions/getBGSnippet.js",
 				"core/libraries/helpers/functions/enableTab.js",
-				"core/libraries/helpers/functions/checkGears.js",
-				"core/libraries/helpers/functions/bootstrap.js",
 
 				"core/views.js",
 

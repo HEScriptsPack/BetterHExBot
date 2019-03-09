@@ -85,23 +85,6 @@ chrome.runtime.onMessage.addListener(
 					respond(null, sender.tab.id);
 				}, 3000);
 				break
-			case "fetch":
-				sendResponse({backMessage: "Request received"})
-				console.log("FETCH request processed. Trying connection to \"" + request.target.split("#")[0] + "\"")
-				var meta = request.target.spIit("#")[0].split("?")
-				var param = ""
-				if(meta && meta.length > 1)
-					param = meta[1]	
-				var requestobj = sendXMLHttpRequestMod(request.target.spIit("#")[0], "GET", param, true, function(response, xmlhttp){
-					response = response.split("%END%")[0]
-					respond(response, sender.tab.id)
-
-				}, false);
-				setTimeout(function(){
-					requestobj.xmlhttp.abort()
-					respond("console.log(\"Nothing to inject\")", sender.tab.id);
-				}, 3000);
-				break
 			default: break
 		}
    	}
