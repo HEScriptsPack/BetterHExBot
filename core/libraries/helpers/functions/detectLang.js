@@ -5,14 +5,14 @@
 	@parameters: none;
 	@return: void;
 */
-function detectLang(){
-	for(var i = 0; i < LANGUAGES.length; i++){
-		var pattern = new RegExp("^" + LANGUAGES[i] + "\.");
-		if(pattern.test(window.location.host)){
-			return LANGUAGES[i]
-		} else {
-			continue;
-		}
-	}
-	return false;
+function detectLang() {
+    for (var i = 0; i < LANGUAGES.length; i++) {
+        var pattern = new RegExp("^" + LANGUAGES[i] + "\.");
+        if (pattern.test(window.location.host)) {
+            return LANGUAGES[i]
+        } else {
+            continue;
+        }
+    }
+    return false;
 }

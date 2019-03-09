@@ -20,14 +20,14 @@ function getDOMElement(tagName, attribName, attribValue, position, color) {
     if (resultElements.length > 0) {
         if (position == "last") position = resultElements.length - 1
         try {
-            
+
         } catch (error) {
             console.log(error.message)
         }
-        try{ //Color the element
+        try { //Color the element
             if (color !== false)
-            resultElements[position].style.color = "red"
-        } catch(error){
+                resultElements[position].style.color = "red"
+        } catch (error) {
             console.log(error.message)
         }
         return resultElements[position]
@@ -37,9 +37,9 @@ function getDOMElement(tagName, attribName, attribValue, position, color) {
 }
 
 /*== adjacent function ==*/
-function get_lack(elemA, elemB){
+function get_lack(elemA, elemB) {
     lack = get_chars().indexOf(elemB) - get_chars().indexOf(elemA)
-    if(lack < 0)
+    if (lack < 0)
         return get_chars().length - get_chars().indexOf(elemA) + get_chars().indexOf(elemB)
     else
         return lack

@@ -1,4 +1,4 @@
-function prepareSequence(callback, sequenceName){
-	callback()
+function prepareSequence(callback, sequenceName) {
+    callback()
 }
 	
