@@ -24,7 +24,7 @@
       "js": [
         "core/libraries/vendor/emn178/sha256.min.js",
         "core/libraries/vendor/jSpaghetti/jSpaghetti.min.js",
-        "core/libraries/vendor/jSpaghetti/jQuery.min.js",
+        "core/libraries/vendor/jQuery/jQuery.min.js",
         "core/constants.js",
         "core/libraries/helpers/functions/detectLang.js",
         "core/lang/en.js",
