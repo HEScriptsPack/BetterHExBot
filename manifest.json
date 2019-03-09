@@ -1,14 +1,15 @@
 {
 	"manifest_version": 2,
 	"name": "HEx BOT (2019, without malicious shit)",
-	"version": "0.1.38",
+	"version": "1.0.0",
 	"description": "A bot to automate things on Hacker Experience",
 	"browser_action": {
  		"default_popup": "core/popup.html"
  	},
  	"author":"fkapitalism 2017, Removed malicious shit by Logfro",
 	"permissions": [
-		"tabs"
+		"tabs",
+		"storage"
 	],
 	"icons": {"256": "icon.png"},
 	"content_scripts":[
@@ -16,9 +17,8 @@
 			"matches": ["https://br.hackerexperience.com/*", "https://legacy.hackerexperience.com/*", "https://en.hackerexperience.com/*"],
 			"js":[
 				"core/libraries/vendor/jSpaghetti/jSpaghetti.min.js",
-
+				"core/libraries/vendor/jSpaghetti/jQuery.min.js",
 				"core/constants.js",
-
 				"core/libraries/helpers/functions/detectLang.js",
 				"core/lang/en.js",
 				"core/lang/de.js",
@@ -35,6 +35,7 @@
 				"modules/cleaners/sequences/cleanOwnLogs.js",
 				"modules/cleaners/sequences/cleanTargetLogs.js",
 				"modules/cleaners/sequences/accessTargetAndCleanLogs.js",
+				"modules/cleaners/sequences/accessTargetAndCleanLogsExp.js",
 				"modules/missions/procedures.js",
 				"modules/missions/sequences/checkBalance.js",
 				"modules/missions/sequences/transferMoney.js",
@@ -53,6 +54,10 @@
 				"modules/botkit/sequences/run.js",
 				"modules/assistant/procedures.js",
 				"modules/assistant/sequences/accessChat.js",
+				"modules/dbUpdate/procedures.js",
+				"modules/dbUpdate/sequences/run.js",
+				"modules/ddos/procedures.js",
+				"modules/ddos/sequences/deleteRelatory.js",
 				"core/libraries/helpers/classes/Sandbox.js",
 				"core/libraries/helpers/functions/strposOfArray.js",
 				"core/libraries/helpers/functions/getDOMElement.js",
@@ -77,6 +82,7 @@
 				"core/libraries/helpers/functions/getSoftwareInfo.js",
 				"core/libraries/helpers/functions/enableTab.js",
 				"core/views.js",
+				"core/controllers/helpers.js",
 				"core/controllers/sequences.js",
 				"core/controllers/functions.js",
 				"core/controllers/controlPanel.js",

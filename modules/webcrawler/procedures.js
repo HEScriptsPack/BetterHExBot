@@ -351,7 +351,7 @@ webcrawler.procedure("logout", function(){
 
 webcrawler.procedure("isThereMessageError", function(shared){
 	var result = false
-	if (getDOMElement("div", "class", "alert alert-error", 0)){
+	if (getDOMElement("div", "class", "alert alert-error", 0) || document.getElementsByClassName("widget-content padding noborder")[0].innerText == "Error: hardware is not registered"){
 		result = true
 	}
 	shared.isThereMError = result
@@ -363,7 +363,14 @@ webcrawler.procedure("forceToAccessTarget", function(){
 })
 
 webcrawler.procedure("hackTargetBruteForce", function(){
-	goToPage("/internet?action=hack&method=bf")
+	if (controllers.bot.controlPanel.checkBoxes[USEEXPLOIT] == true) {
+        goToPage("/internet?action=hack&method=xp");
+        setTimeout(function () {
+            document.getElementsByClassName("btn btn-success")[0].click();
+        }, 22000);
+    } else {
+        goToPage("/internet?action=hack&method=bf");
+    }
 })
 
 webcrawler.procedure("goToTargetLogs", function(){

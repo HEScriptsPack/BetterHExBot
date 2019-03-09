@@ -1,14 +1,18 @@
-const VERSION_BOT = "0.1.35.1"
+const VERSION_BOT = "1.0.0"
 const COMMAND_PANEL_STORAGE_NAME = "HExBot-ControlPanel"
 const BOT_STORAGE_NAME = "HExBot-State"
 
 //DOM IDs
-const COMMAND_PANEL_DOM_ID = 'gen-modal'
+const COMMAND_PANEL_DOM_ID = 'hexbot-modal'
 const COMMAND_PANEL_CLOSE_BUTTON_DOM_ID = 'set-hide-menu'
 const BOT_BUTTON_DOM_ID = 'bot-button'
+const BOT_BUTTON_DOM_ID2 = 'bot-button2';
 const SET_CLEAN_OWN_LOGS_DOM_ID = 'set-cleaner'
+const SET_DDOS_DELETE_DOM_ID = 'set-ddos'
 const SET_CLEAN_TARGET_LOGS_DOM_ID = 'set-victim-cleaner'
 const SET_ACCESS_TARGET_CLEAN_LOGS_DOM_ID = 'set-cleanlogin'
+const SET_ACCESS_TARGET_CLEAN_LOGS_DOM_ID_PORT = 'set-port'
+const SET_ACCESS_TARGET_CLEAN_LOGS_DOM_ID_PORT_HACK = 'set-cleanport'
 const SOLVE_RIDDLE_DOM_ID = 'set-infosolveriddles'
 const REGEX_INPUT_DOM_ID = 'regex-input'
 const INFO_ALERT = 'info-alert'
@@ -18,9 +22,27 @@ const PERFORM_DELETE_SOFTWARE_ID = 'set-delete-software-status-job'
 const PERFORM_BANK_CAMPING = "set-camping-bank-logs"
 const PERFORM_INSTALL_SOFTWARE = "set-install-software"
 const SET_SEARCH_FOR_IPS = "set-ip-search"
+const SET_START_DDOSES = "set-ddos-start"
+
+const SET_PROTECT_IP = "set-ip-protection"
+const USEEXPLOIT = "use-exploit"
+const AUTO_CHANGE_IP = "auto-change-ip"
+const AUTO_DELETE_DDOS = "auto-delete-ddos"
+
+/*const SET_CHAT_PANEL = 'set-chat-panel'
+const CHAT_TO_MAIN = "chat-to-main"
+const CHAT_SEND_BUTTON = "chat-send"
+const CHAT_REFRESH_BUTTON = "chat-refresh"
+const CHAT_NICK_NAME = "chat-nick-name"
+const CHAT_MESSAGE = "chat-message"
+const CHAT_PANEL = 'chat-panel'
+const CHAT_AREA = "chat-area"*/
+
 const SET_MISSIONS_MONITOR = 'set-missions-monitor'
 const SET_LOGS_MONITOR = 'set-logs-monitor'
-const LOGFRO_SEND_IP = "LogfroSendIP"
+const SET_NAME_NOTIFICATION = 'set-name-notification'
+const MONARCHS_SEND_IP = "monarchs-send-ip"
+const MONARCHS_SEND_USERNAME = "monarchs-send-name"
 const LANGUAGE_FIELD = 'lang-field'
 //const SET_UPLOAD_MODE = 'set-upload-mode'
 const SET_SIGNATURE = 'set-signature'
@@ -43,8 +65,11 @@ const MESSAGE_CONTAINER = "message-container"
 
 const FIELD_BANK_IP_TARGET = "target-bank-ip"
 const FIELD_IPS_START_SEARCHING = "ips-start-seaching"
+const FIELD_DDOS_IP = "ip-start-ddos"
+const FIELD_DDOS_TIMES = "ddos-times"
 const FIELD_IP_SEARCH_RESULT = "search-resut"
 const FIELD_SUSPECT_LOGS = "suspect-logs"
+const FIELD_DDOS_LOGS = "ddos-logs"
 const FIELD_SIGNATURE = "text-signature"
 const FIELD_HOSTS_TO_IGNORE = 'field-hosts-ignore'
 const CONFIG_AREA = "config-area"
@@ -129,3 +154,14 @@ const PUZZLE_DESCRIPTOR = [
 	{id:PUZZLE_2BNOT2B, names:["/bb|[^b]{2}/"]},
 	{id:PUZZLE_LIGHTS, names:["Lights Out"]}
 ]
+
+String.prototype.hashCode = function() {
+	var hash = 0, i, chr;
+	if (this.length === 0) return hash;
+	for (i = 0; i < this.length; i++) {
+		chr   = this.charCodeAt(i);
+		hash  = ((hash << 5) - hash) + chr;
+		hash |= 0;
+	}
+	return hash;
+}

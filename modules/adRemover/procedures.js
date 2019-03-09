@@ -11,6 +11,13 @@ adRemover.procedure("removeAds", function(){
 			}
 		}
 	}
+	function removeHE2Message(){
+		var message = document.getElementById("he2")
+		if(message !== null){
+			message.remove()
+		}
+	}
+	removeHE2Message()
 	removeInsTags()
 	setInterval(function(){
 		removeInsTags()

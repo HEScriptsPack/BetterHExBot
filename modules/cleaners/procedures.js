@@ -63,6 +63,14 @@ cleanersMod.procedure("hackTargetBruteForce", function(){
 	goToPage("/internet?action=hack&method=bf")
 })
 
+cleanersMod.procedure("hackTargetPortScan", function(){
+	goToPage("/internet?action=hack&method=xp")
+})
+
+cleanersMod.procedure("hackTargetPortExploit", function(){
+	goToPage("/internet?action=hack&method=xp")
+})
+
 cleanersMod.procedure("isThereMessageError", function(){
 	if (getDOMElement("div", "class", "alert alert-error", 0))
 	return true

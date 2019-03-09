@@ -3,6 +3,10 @@ function buttonToAction(){
 		controllers.functions.executeSequence("cleaners", "cleanOwnLogs")
 	})
 
+	document.getElementById(SET_DDOS_DELETE_DOM_ID).addEventListener("click", function(){
+		controllers.functions.executeSequence("ddos", "deleteRelatory")
+	})
+
 	document.getElementById(SET_CLEAN_TARGET_LOGS_DOM_ID).addEventListener("click", function(){
 		controllers.functions.executeSequence("cleaners", "cleanTargetLogs")
 	})
@@ -10,10 +14,19 @@ function buttonToAction(){
 	document.getElementById(SET_ACCESS_TARGET_CLEAN_LOGS_DOM_ID).addEventListener("click", function(){
 		controllers.functions.executeSequence("cleaners", "accessTargetAndCleanLogs")
 	})
+	
+	document.getElementById(SET_ACCESS_TARGET_CLEAN_LOGS_DOM_ID_PORT).addEventListener("click", function(){
+		controllers.functions.executeSequence("cleaners", "accessTargetAndCleanLogsExp")
+	})
 
 	document.getElementById(PERFORM_CHECK_BALANCE_ID).addEventListener("click", function(){
 		controllers.functions.executeSequence("missions", "checkBalance")
 	})
+
+	/*document.getElementById(SET_CHAT_PANEL).addEventListener("click", function(){
+		views.switchToChatPanel()
+		controllers.functions.chat(views.drawChat)
+	})*/
 
 	document.getElementById(PERFORM_TRANSFER_MONEY_ID).addEventListener("click", function(){
 		controllers.functions.executeSequence("missions", "transferMoney")
@@ -30,7 +43,11 @@ function buttonToAction(){
 	document.getElementById(SET_SEARCH_FOR_IPS).addEventListener("click", function(){
 		controllers.functions.executeSequence("webcrawler", "browseWeb")
 	})
-
+	
+	/*document.getElementById(SET_START_DDOSES).addEventListener("click", function(){
+		controllers.functions.executeSequence("ddos", "run")
+	})*/
+	
 	document.getElementById(INFO_ALERT).addEventListener("click", function(){
 		window.alert(LANG.WARNING_BUTTON)
 	})

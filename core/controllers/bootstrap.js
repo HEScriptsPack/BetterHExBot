@@ -4,6 +4,7 @@ controllers.storage = new Storage(BOT_STORAGE_NAME)
 var storageContent = controllers.storage.get(function(storageContent){
 	if (storageContent){
 		controllers.bot = storageContent
+		localStorage.setItem("Settings", JSON.stringify(controllers.bot.controlPanel));
 	} else { 
 		controllers.bot = new Bot()
 	}
@@ -13,7 +14,8 @@ var storageContent = controllers.storage.get(function(storageContent){
 	controllers.isRegularGamePage = false
 	if (isRegularPage){ 
 		controllers.isRegularGamePage = true
-		
+
+		helpers();
 		functions()
 		controlPanel()
 		buttonToAction()

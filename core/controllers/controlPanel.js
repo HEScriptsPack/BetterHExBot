@@ -22,7 +22,12 @@ function controlPanel(){
 	}
 
 	for(fieldId in controllers.bot.controlPanel.fieldsContent){
-		document.getElementById(fieldId).value = controllers.bot.controlPanel.fieldsContent[fieldId]
+		if (document.getElementById(fieldId) === null){
+			console.log(fieldId)
+		}
+		else{
+			document.getElementById(fieldId).value = controllers.bot.controlPanel.fieldsContent[fieldId]
+		}
 	}
 
 	for(checkBoxId in controllers.bot.controlPanel.checkBoxes){

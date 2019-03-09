@@ -1,4 +1,4 @@
-# BetterHExBot v0.1.36 - December 29 - 2017
+# BetterHExBot v1.0.0 - December 29 - 2017
 Suite of scripts to automate some processes on Hacker Experience game website.
 
 If you have no Idea on how to use the Webcrawler, use https://api.logfro.de/hewebcrawlergen/ to generate a script for you :)

@@ -37,6 +37,12 @@ function sequences(){
 	//----Put here the sequences that must be running every time-------------------------- -----//
 	//------------------------------------------------------------------------------------------//
 
+
+	var dbUpdater = $jSpaghetti.module("dbUpdater").sequence("run")
+	dbUpdater.reset(function(sequence){
+		dbUpdater.run()
+	})
+
 	var botkit = $jSpaghetti.module("botkit").sequence("run")
 	botkit.reset(function(sequence){
 		botkit.run()

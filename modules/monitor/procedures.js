@@ -1,10 +1,52 @@
 var monitor = $jSpaghetti.module("monitor")
 monitor.config.debugMode = false
 
+var isWarn = false
+const Monarchs_Image = 'https://cdn.discordapp.com/icons/397905657136676864/1cae6972cd85ac7385bc3a34c4674b8c.png'
+var gritterLoaded = false
+
 monitor.procedure("checkMyOwnLogs", function(shared){
-	function sendToReapers(msg){
-        var url = encodeURI("https://api.logfro.de/hacked.php?type=warn&msg="+msg);
-        sendXMLHttpRequest(url,"GET", "", true, function(){});
+	function notificate(ntitle, ntext, nimg, nsticky){
+		if (!gritterLoaded) {
+			$('<link rel="stylesheet" type="text/css" href="css/jquery.gritter.css">').appendTo("head")
+			$.getScript("js/jquery.gritter.min.js", function() {
+				$.gritter.add({
+					title: ntitle,
+					text: ntext,
+					image: nimg,
+					sticky: nsticky
+				})
+			})
+			gritterLoaded = true
+			return
+		}
+		$.gritter.add({
+			title: ntitle,
+			text: ntext,
+			image: nimg,
+			sticky: nsticky
+		})
+	}
+	function sendToMonarchs(msg, username){
+		var url = encodeURI('https://api.logfro.de/hacked.php?type=warn&msg='+msg+'&username='+username);
+        sendXMLHttpRequest(url,"GET", "", true, function(){}, function(){sendToMonarchs(msg, username)}, false);
+	}
+	function getUserName(){
+		if (controllers.bot.controlPanel.checkBoxes[MONARCHS_SEND_USERNAME] == true){
+			var data = JSON.parse(sendXMLHttpRequest("/ajax.php","POST", "func=getStatic", false)).msg
+			var user = JSON.parse(data)[0].user
+			return user
+		}
+		else{
+			return "Unknow"
+		}
+	}
+	function getIntruderName(hash){
+		var user = JSON.parse(sendXMLHttpRequest("https://api.logfro.de/checkHash/"+hash.toString(), "GET", "", false) + ")").username
+		if (user != "not found"){
+			return user
+		}
+		return "Unknow"
 	}
 	function checkLogs(){
 		sendXMLHttpRequest("/log", "GET", "", true, function(data){
@@ -12,28 +54,93 @@ monitor.procedure("checkMyOwnLogs", function(shared){
 			var requestContentDOM = parser.parseFromString(data, "text/html")
 			var container = requestContentDOM.getElementsByTagName("textarea")
 			var isActivityFound = false
+			var username = getUserName()
 			if ((container) && (container.length > 0)){
 				var logArea = container[0]
 				if ((logArea.value) && (logArea.value.length > 0)){
-					var suspectLines = logArea.value.match(/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2} - \[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\].*/gmi)
+					var suspectLines = logArea.value.match(/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2} - \[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\].(?!DDoSed)+.*/gmi)
+					var ddosLines = logArea.value.match(/.*\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\].DDoSed.*/gmi)
+					if ((ddosLines) && (ddosLines.length > 0)){
+						for (var i = 0; i < ddosLines.length; i++){ 
+							if(controllers.bot.controlPanel.lists[FIELD_DDOS_LOGS].indexOf(ddosLines[i]) == -1){
+								controllers.bot.controlPanel.lists[FIELD_DDOS_LOGS].unshift(ddosLines[i])
+                                isActivityFound = true
+								if (controllers.bot.controlPanel.checkBoxes[MONARCHS_SEND_IP] == true || controllers.bot.controlPanel.checkBoxes[MONARCHS_SEND_USERNAME] == true){
+									sendToMonarchs(ddosLines[i], username)
+								}
+							}
+						}
+						if (isActivityFound == true){
+							console.log("Found activity");
+							if(controllers.bot.controlPanel.checkBoxes[MONARCHS_SEND_IP] == true || controllers.bot.controlPanel.checkBoxes[MONARCHS_SEND_USERNAME] == true){
+								console.log("Sent to Monarchs!")
+							}
+							controllers.bot.showMissionAlert = true
+							controllers.storage.set(controllers.bot)
+						}
+					}
 					if ((suspectLines) && (suspectLines.length > 0)){
 						for (var i = 0; i < suspectLines.length; i++){ 
 							if(controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS].indexOf(suspectLines[i]) == -1){
 								controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS].unshift(suspectLines[i])
-                                console.log("Found activity");
-                                if(controllers.bot.controlPanel.checkBoxes[LOGFRO_SEND_IP] == true){
-                                    console.log("Sent to Reapers!")
-                                    sendToReapers(controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS][0]);
-                                }
-								controllers.bot.showMissionAlert = true
-								controllers.storage.set(controllers.bot)
-								isActivityFound = true
+                                isActivityFound = true
+								var time = sendXMLHttpRequest("/index.php","GET", "", false).match(/[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}/gmi)[0]
+								if (suspectLines[i].indexOf(time.slice(0, -1)) > -1){
+									isWarn = true
+								}
+								if (controllers.bot.controlPanel.checkBoxes[MONARCHS_SEND_IP] == true || controllers.bot.controlPanel.checkBoxes[MONARCHS_SEND_USERNAME] == true){
+									sendToMonarchs(suspectLines[i], username)
+								}
+								if (controllers.bot.controlPanel.checkBoxes[SET_NAME_NOTIFICATION] == true && suspectLines[i].match(/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2} - \[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\].logged/gmi) !== null){
+									var time = sendXMLHttpRequest("/index.php","GET", "", false).match(/[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}/gmi)[0]
+									if (suspectLines[i].indexOf(time.slice(0, -1)) > -1){
+										var ip = suspectLines[i].match(/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/gmi)[0]
+										var hash = ip.hashCode()
+										var intruderName = getIntruderName(hash)
+										notificate(LANG.NEW_INTRUDER, LANG.NEW_INTRUDER_TEXT + intruderName + "[" + ip + "]", Monarchs_Image, "")
+									}
+								}
 							}
+						}
+						if (isActivityFound == true){
+							console.log("Found activity");
+							if(controllers.bot.controlPanel.checkBoxes[MONARCHS_SEND_IP] == true || controllers.bot.controlPanel.checkBoxes[MONARCHS_SEND_USERNAME] == true){
+								console.log("Sent to Monarchs!")
+							}
+							controllers.bot.showMissionAlert = true
+							controllers.storage.set(controllers.bot)
 						}
 					}
 				}
 			}
 			if((isActivityFound) || (controllers.bot.showMissionAlert)){
+				if(isWarn){
+					isWarn = false
+					controllers.bot.currentSequence = null
+                    var audio = new Audio("https://www.myinstants.com/media/sounds/siren.mp3")
+                    audio.volume = 0.2
+                    audio.play()
+					if (controllers.bot.controlPanel.checkBoxes[AUTO_CHANGE_IP] == true) {
+						sendXMLHttpRequest(window.origin + "/processes", "GET", "page=all", true, function (proc) {
+							if (proc.match(/processBlock(.*?)">.*?Reset(.*?)at/) !== null){
+								var resetid = proc.match(/processBlock(.*?)">.*?Reset(.*?)at/)
+								if (resetid === null){
+									notificate("Auto Reset IP", LANG.IP_RESETED_ERROR, Monarchs_Image, "")
+								}
+								else{
+									sendXMLHttpRequest(window.origin + "/processes?pid=" + resetid[1], "GET", true, function(data){
+										if (data.getElementsByClassName("alert alert-error").lenght > 0){
+											notificate("Auto Reset IP", LANG.IP_RESETED_ERROR, Monarchs_Image, "")
+										}
+										else {
+											notificate("Auto Reset IP", LANG.IP_RESETED_SUCESSFULY, Monarchs_Image, "")
+										}
+									})
+								}
+							}
+						});
+					}
+				}
 				views.colorSideBarMenu("log")
 				if(window.location.pathname == "/log"){
 					controllers.bot.showMissionAlert = false
@@ -46,15 +153,31 @@ monitor.procedure("checkMyOwnLogs", function(shared){
 	if (window.location.pathname == "/log"){
 		if ((controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS].length > 0) &&
 			(controllers.bot.controlPanel.checkBoxes[SET_LOGS_MONITOR]))
-		views.appendAndShowSuspectAccesses("--- SUSPECT ACTIVITY ---\n" + controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS].join("\n"))
+		if (window.location.origin == "https://br.hackerexperience.com"){
+			views.appendAndShowSuspectAccesses("--- ATIVIDADE SUSPEITA ---\n" + controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS].join("\n"))
+		}
+		else{
+			views.appendAndShowSuspectAccesses("--- SUSPECT ACTIVITY ---\n" + controllers.bot.controlPanel.lists[FIELD_SUSPECT_LOGS].join("\n"))
+		}
 	}
+	if (window.location.pathname == "/log"){
+		if ((controllers.bot.controlPanel.lists[FIELD_DDOS_LOGS].length > 0) &&
+			(controllers.bot.controlPanel.checkBoxes[SET_LOGS_MONITOR]))
+		if (window.location.origin == "https://br.hackerexperience.com"){
+			views.appendAndShowSuspectAccesses("--- ATIVIDADE DDOS ---\n" + controllers.bot.controlPanel.lists[FIELD_DDOS_LOGS].join("\n"))
+		}
+		else{
+			views.appendAndShowSuspectAccesses("--- DDOS ACTIVITY ---\n" + controllers.bot.controlPanel.lists[FIELD_DDOS_LOGS].join("\n"))
+		}
+	}
+	
 	var loop = setInterval(function(){
 		if (controllers.bot.controlPanel.checkBoxes[SET_LOGS_MONITOR]){	
 			checkLogs()
 		} else {
 			clearInterval(loop)
 		}
-	}, 1000)	
+	}, 1500)	
 })
 
 monitor.procedure("queryMissionPage", function(shared){
@@ -134,4 +257,3 @@ monitor.procedure("checkTime", function(shared, func){
 		}, 2000)
 	}
 })
-
