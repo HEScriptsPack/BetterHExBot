@@ -20,4 +20,5 @@ var storageContent = controllers.storage.get(function(storageContent){
 		botButton()
 
 	}	
+	controllers.functions.activeButtons(true)
 })
