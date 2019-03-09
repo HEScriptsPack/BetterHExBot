@@ -51,7 +51,7 @@ const SET_TRANSFER_TO_BTC = 'set-to-btc'
 const SET_SKIP_AFTER_UPLOAD = 'set-skip-after-upload'
 //const SET_HIDE_MODE = 'set-hide-mode'
 const SET_POPUP_AFTER_INSTRUCTION = 'set-pop-up'
-const PERFORM_UPDATE_CRACKER = 'perform-update-cracker' 
+const PERFORM_UPDATE_CRACKER = 'perform-update-cracker'
 const SET_CONFIG_PANEL = 'set-config-panel'
 const CONFIG_TO_MAIN = "config-to-main"
 const WEBCRAWLER_SCRIPT = "web-crawl-script"
@@ -125,43 +125,36 @@ const PUZZLE_LIGHTS = 27;
 	Puzzle descriptor
 */
 const PUZZLE_DESCRIPTOR = [
-	{id:PUZZLE_TICTT, names:["Tic Tac Toe","Jogo da Velha"]},
-	{id:PUZZLE_MESSYD, names:["Messy Drawer","Gaveta Bagunçada"]},
-	{id:PUZZLE_VOLCANO, names:["name of the volcanö","nome do vulcãö"]},
-	{id:PUZZLE_HIDDENN, names:["Hidden Numbers","Números Ocultos"]},
-	{id:PUZZLE_HOTDOGS, names:["Hot Dogs","Cachorros Quentes"]},
-	{id:PUZZLE_COORD, names:["37.2350° N, 115.8111° W"]},
-	{id:PUZZLE_PROPORT, names:["Proportions", "Proporções"]},
-	{id:PUZZLE_BINHE, names:["072 097 099 107 101 114"]},
-	{id:PUZZLE_SNEAKERS, names:["Setec Astronomy"]},
-	{id:PUZZLE_SUDOKU, names:["Sudoku"]},
-	{id:PUZZLE_2048, names:["2048 was developed by", "2048 foi desenvolvido por"]},
-	{id:PUZZLE_JOBS, names:["01010011 01110100 01100001"]},
-	{id:PUZZLE_3MUSK, names:["In Alexander Dumas' book", "No livro de Alexander Dumas"]},
-	{id:PUZZLE_CHOCO, names:["Fat Boys", "Barras de Chocolate"]},
-	{id:PUZZLE_DRIEDPO, names:["Dried Potatoes", "Batatas Malucas"]},
-	{id:PUZZLE_CRAZYBANK, names:["Crazy Banker", "Banqueiro maluco"]},
-	{id:PUZZLE_MINES, names:["Minesweeper", "Campo minado"]},
-	{id:PUZZLE_LITTLEL, names:["Little Liars", "Competidores mentirosos"]},
-	{id:PUZZLE_BIRDSC, names:["Birds And Cages", "Canários e Gaiolas"]},
-	{id:PUZZLE_SWIMM, names:["Swimmers", "Medalhistas da natação"]},
-	{id:PUZZLE_WHALE, names:["The Whale", "A Baleia"]},
-	{id:PUZZLE_BIRDW, names:["Birdwatching", "Observando pássaros"]},
-	{id:PUZZLE_N100, names:["Number 100", "Número 100"]},
-	{id:PUZZLE_CROC, names:["Crocodiles", "Criadores de Jacarés"]},
-	{id:PUZZLE_PREMIUM, names:["∀x Player(x)", "∀x Jogador(x)"]},
-	{id:PUZZLE_SHEEPS, names:["Sheeps and Chickens", "Ovelhas e Galinhas"]},
-	{id:PUZZLE_2BNOT2B, names:["/bb|[^b]{2}/"]},
-	{id:PUZZLE_LIGHTS, names:["Lights Out"]}
-]
+    {id: PUZZLE_TICTT, names: ["Tic Tac Toe", "Jogo da Velha"]},
+    {id: PUZZLE_MESSYD, names: ["Messy Drawer", "Gaveta Bagunçada"]},
+    {id: PUZZLE_VOLCANO, names: ["name of the volcanö", "nome do vulcãö"]},
+    {id: PUZZLE_HIDDENN, names: ["Hidden Numbers", "Números Ocultos"]},
+    {id: PUZZLE_HOTDOGS, names: ["Hot Dogs", "Cachorros Quentes"]},
+    {id: PUZZLE_COORD, names: ["37.2350° N, 115.8111° W"]},
+    {id: PUZZLE_PROPORT, names: ["Proportions", "Proporções"]},
+    {id: PUZZLE_BINHE, names: ["072 097 099 107 101 114"]},
+    {id: PUZZLE_SNEAKERS, names: ["Setec Astronomy"]},
+    {id: PUZZLE_SUDOKU, names: ["Sudoku"]},
+    {id: PUZZLE_2048, names: ["2048 was developed by", "2048 foi desenvolvido por"]},
+    {id: PUZZLE_JOBS, names: ["01010011 01110100 01100001"]},
+    {id: PUZZLE_3MUSK, names: ["In Alexander Dumas' book", "No livro de Alexander Dumas"]},
+    {id: PUZZLE_CHOCO, names: ["Fat Boys", "Barras de Chocolate"]},
+    {id: PUZZLE_DRIEDPO, names: ["Dried Potatoes", "Batatas Malucas"]},
+    {id: PUZZLE_CRAZYBANK, names: ["Crazy Banker", "Banqueiro maluco"]},
+    {id: PUZZLE_MINES, names: ["Minesweeper", "Campo minado"]},
+    {id: PUZZLE_LITTLEL, names: ["Little Liars", "Competidores mentirosos"]},
+    {id: PUZZLE_BIRDSC, names: ["Birds And Cages", "Canários e Gaiolas"]},
+    {id: PUZZLE_SWIMM, names: ["Swimmers", "Medalhistas da natação"]},
+    {id: PUZZLE_WHALE, names: ["The Whale", "A Baleia"]},
+    {id: PUZZLE_BIRDW, names: ["Birdwatching", "Observando pássaros"]},
+    {id: PUZZLE_N100, names: ["Number 100", "Número 100"]},
+    {id: PUZZLE_CROC, names: ["Crocodiles", "Criadores de Jacarés"]},
+    {id: PUZZLE_PREMIUM, names: ["∀x Player(x)", "∀x Jogador(x)"]},
+    {id: PUZZLE_SHEEPS, names: ["Sheeps and Chickens", "Ovelhas e Galinhas"]},
+    {id: PUZZLE_2BNOT2B, names: ["/bb|[^b]{2}/"]},
+    {id: PUZZLE_LIGHTS, names: ["Lights Out"]}
+];
 
-String.prototype.hashCode = function() {
-	var hash = 0, i, chr;
-	if (this.length === 0) return hash;
-	for (i = 0; i < this.length; i++) {
-		chr   = this.charCodeAt(i);
-		hash  = ((hash << 5) - hash) + chr;
-		hash |= 0;
-	}
-	return hash;
-}
+String.prototype.hashCode = function () {
+    return sha256(this);
+};
