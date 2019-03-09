@@ -83,5 +83,7 @@ LANG_CONTENT[LANG_DE] = {
     NEW_INTRUDER_TEXT: "Du wurdest gehackt von ",
     RUN_DDOSER: "Starte DDoS",
     DDOS_IP: "Anzugreifende IP: ",
-    DDOS_HOST: "Anzahl der Angriffe:"
+    DDOS_HOST: "Anzahl der Angriffe:",
+	NOTIFICATION_TITLE: "Thanks To Enable Notification!",
+	NOTIFICATION_BODY: "Now you Able to get Notified!"
 }
