@@ -34,10 +34,9 @@ function sendXMLHttpRequest(script_target, method, parameters, isAsynchronous, f
             xmlhttp.send(parameters)
             break
         case "GET":
-	    if(parameters != "" || parameters !== null){
+	    if (parameters != "" || parameters !== null){
                 xmlhttp.open("GET", script_target + "?" + parameters, isAsynchronous)
-	    }
-	    else{
+	    } else{
 	        xmlhttp.open("GET", script_target, isAsynchronous)
 	    }
             xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8")
