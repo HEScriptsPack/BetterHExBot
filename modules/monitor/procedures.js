@@ -2,30 +2,10 @@ var monitor = $jSpaghetti.module("monitor")
 monitor.config.debugMode = false
 
 var isWarn = false
-const Monarchs_Image = 'https://cdn.discordapp.com/icons/397905657136676864/1cae6972cd85ac7385bc3a34c4674b8c.png'
-var gritterLoaded = false
 
 monitor.procedure("checkMyOwnLogs", function (shared) {
-    function notificate(ntitle, ntext, nimg, nsticky) {
-        if (!gritterLoaded) {
-            $('<link rel="stylesheet" type="text/css" href="css/jquery.gritter.css">').appendTo("head")
-            $.getScript("js/jquery.gritter.min.js", function () {
-                $.gritter.add({
-                    title: ntitle,
-                    text: ntext,
-                    image: nimg,
-                    sticky: nsticky
-                })
-            })
-            gritterLoaded = true
-			return
-        }
-        $.gritter.add({
-            title: ntitle,
-            text: ntext,
-            image: nimg,
-            sticky: nsticky
-        })
+    function notificate(title, text, image) {
+		new Notification(title, {"icon": image, "body": text})
     }
 
     function sendToMonarchs(msg, username) {
@@ -103,7 +83,7 @@ monitor.procedure("checkMyOwnLogs", function (shared) {
                                         var ip = suspectLines[i].match(/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/gmi)[0]
                                         var hash = ip.hashCode()
                                         var intruderName = getIntruderName(hash)
-                                        notificate(LANG.NEW_INTRUDER, LANG.NEW_INTRUDER_TEXT + intruderName + "[" + ip + "]", Monarchs_Image, "")
+                                        notificate(LANG.NEW_INTRUDER, LANG.NEW_INTRUDER_TEXT + intruderName + "[" + ip + "]", Monarchs_Image)
                                     }
                                 }
                             }
@@ -131,13 +111,13 @@ monitor.procedure("checkMyOwnLogs", function (shared) {
                             if (proc.match(/processBlock(.*?)">.*?Reset(.*?)at/) !== null) {
                                 var resetid = proc.match(/processBlock(.*?)">.*?Reset(.*?)at/)
                                 if (resetid === null) {
-                                    notificate("Auto Reset IP", LANG.IP_RESETED_ERROR, Monarchs_Image, "")
+                                    notificate("Auto Reset IP", LANG.IP_RESETED_ERROR, Monarchs_Image)
                                 } else {
                                     sendXMLHttpRequest(window.origin + "/processes?pid=" + resetid[1], "GET", true, function (data) {
                                         if (data.getElementsByClassName("alert alert-error").lenght > 0) {
-                                            notificate("Auto Reset IP", LANG.IP_RESETED_ERROR, Monarchs_Image, "")
+                                            notificate("Auto Reset IP", LANG.IP_RESETED_ERROR, Monarchs_Image)
                                         } else {
-                                            notificate("Auto Reset IP", LANG.IP_RESETED_SUCESSFULY, Monarchs_Image, "")
+                                            notificate("Auto Reset IP", LANG.IP_RESETED_SUCESSFULY, Monarchs_Image)
                                         }
                                     })
                                 }
