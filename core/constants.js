@@ -74,6 +74,7 @@ const LANG_EN = "en";
 const LANG_BR = "br";
 const LANG_DE = "de";
 const LANGUAGES = [LANG_EN, LANG_BR, LANG_DE];
+const Monarchs_Image = 'https://cdn.discordapp.com/icons/397905657136676864/1cae6972cd85ac7385bc3a34c4674b8c.png'
 
 //Missions type
 const CHECK_BALANCE = "checkBalance"
