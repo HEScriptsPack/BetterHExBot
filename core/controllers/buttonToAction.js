@@ -22,12 +22,7 @@ function buttonToAction(){
 	document.getElementById(PERFORM_CHECK_BALANCE_ID).addEventListener("click", function(){
 		controllers.functions.executeSequence("missions", "checkBalance")
 	})
-
-	/*document.getElementById(SET_CHAT_PANEL).addEventListener("click", function(){
-		views.switchToChatPanel()
-		controllers.functions.chat(views.drawChat)
-	})*/
-
+	
 	document.getElementById(PERFORM_TRANSFER_MONEY_ID).addEventListener("click", function(){
 		controllers.functions.executeSequence("missions", "transferMoney")
 	})
