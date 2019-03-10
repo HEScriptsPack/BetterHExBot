@@ -52,6 +52,7 @@
         "modules/camping/procedures.js",
         "modules/camping/sequences/bankCamping.js",
         "modules/webcrawler/procedures.js",
+        "modules/webcrawler/sequences/browseExploits.js",
         "modules/webcrawler/sequences/browseWeb.js",
         "modules/monitor/procedures.js",
         "modules/monitor/sequences/checkMission.js",
