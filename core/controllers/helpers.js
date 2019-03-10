@@ -55,7 +55,7 @@ function helpers() {
             ddos_form.innerHTML += `
 <div class="control-group">
 <div class="controls center">
-<input type="submit" class="btn btn-danger" value="` + LAUNCH_DDOS + `">
+<input type="submit" onClick="$(\"form.ddos_form\")[0].submit();" class="btn btn-danger" value="` + LAUNCH_DDOS + `">
 </div>
 </div>`
         }
