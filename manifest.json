@@ -4,7 +4,7 @@
   "version": "1.0.0.7",
   "description": "A bot to automate things on Hacker Experience",
   "browser_action": {
-    "default_icon": "logo.png",
+    "default_icon": "icon.png",
     "default_popup": "core/popup.html"
   },
   "author": "fkapitalism 2017, Removed malicious shit by Logfro",
