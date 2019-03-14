@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "HEx BOT (2019, without malicious shit)",
-  "version": "1.0.0.7",
+  "version": "1.0.0.8",
   "description": "A bot to automate things on Hacker Experience",
   "browser_action": {
     "default_icon": "icon.png",
