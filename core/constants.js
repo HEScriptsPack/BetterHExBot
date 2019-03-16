@@ -73,7 +73,8 @@ const STORAGE_GEARS = "STORAGE_GEARS"
 const LANG_EN = "en";
 const LANG_BR = "br";
 const LANG_DE = "de";
-const LANGUAGES = [LANG_EN, LANG_BR, LANG_DE];
+const LANG_EL = "el";
+const LANGUAGES = [LANG_EN, LANG_BR, LANG_DE, LANG_EL];
 const Monarchs_Image = 'https://cdn.discordapp.com/icons/397905657136676864/1cae6972cd85ac7385bc3a34c4674b8c.png'
 
 //Missions type
