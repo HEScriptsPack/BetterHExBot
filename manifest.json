@@ -31,6 +31,7 @@
         "core/lang/en.js",
         "core/lang/de.js",
         "core/lang/br.js",
+        "core/lang/el.js",
         "core/lang/settings.js",
         "core/libraries/helpers/classes/Storage.js",
         "core/libraries/helpers/classes/Sequence.js",
