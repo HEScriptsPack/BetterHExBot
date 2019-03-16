@@ -87,7 +87,6 @@ var views = {
             '<div id="' + CREDITS_SCREEN_DOM_ID + '" class="modal-body">' +
             '<h1>' + LANG.CREDITS_TITLE + '</h1>' +
             '<div style="font-size: 15px;">' +
-            '<a MONARCHS</a> - ' + LANG.CREDITS_cmathiswausau + '<br />' +
             '<a href="https://github.com/cmathiswausau">cmathiswausau</a> - ' + LANG.CREDITS_cmathiswausau + '<br />' +
             '<a href="https://github.com/dominicusdev">dominicusdev</a> - ' + LANG.CREDITS_dominicusdev + '<br />' +
             '<a href="https://github.com/gresendesa">gresendesa</a> - ' + LANG.CREDITS_gresendesa + '<br />' +
