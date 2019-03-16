@@ -24,9 +24,6 @@ Functionalities:
 * Custom user scripts (NEW)
 * Send's IP of people who hack you directly to Monarchs
 
-## Know Bugs:
-* When Solving Riddles and not using website Language some Riddles dont gonna get solved.
-
 ## How to install
 1. Use Chrome
 2. Install Extension: https://chrome.google.com/webstore/detail/hex-bot-2018-without-mali/ongijifnpijobhedppfbnobpflmjbdmf/
