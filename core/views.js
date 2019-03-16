@@ -134,7 +134,7 @@ var views = {
             '<hr />' +
             '<h4>' + LANG.CONFIG_LANG_NAME + '</h4>' +
             '<div class="divider">' +
-            '<label><input class="fieldsContent" id="' + LANGUAGE_FIELD + '" type="text"><span> <b>br</b>, <b>en</b>, <b>de</b></span></label>' +
+            '<label><input class="fieldsContent" id="' + LANGUAGE_FIELD + '" type="text"><span> <b>br</b>, <b>en</b>, <b>de</b>, <b>el</b> </span></label>' +
             '</div>' +
             '<button id="' + CONFIG_TO_MAIN + '" class="btn btn-success">' + LANG.CREDITS_BACK_BUTTON + '</button>' +
             '</div>' +
