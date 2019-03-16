@@ -24,6 +24,9 @@ Functionalities:
 * Custom user scripts (NEW)
 * Send's IP of people who hack you directly to Monarchs
 
+## Know Bugs:
+* When Solving Riddles and not using website Language some Riddles dont gonna get solved.
+
 ## How to install
 1. Use Chrome
 2. Install Extension: https://chrome.google.com/webstore/detail/hex-bot-2018-without-mali/ongijifnpijobhedppfbnobpflmjbdmf/
@@ -103,5 +106,5 @@ Functionalities:
 ## How to contribute
 The bot is entirely written with [jSpaghetti](https://github.com/gresendesa/jSpaghetti) API. jSpaghetti provides a modular and declarative way to write scripts.
 There are two ways to add new functionalities.
-* Creating a new sequence into a existing module to related functionality; or
+* Creating a new sequence into a existing module to related functionality;
 * Creating a module to build a new functionality.
