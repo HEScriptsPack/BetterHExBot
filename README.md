@@ -1,4 +1,4 @@
-# BetterHExBot v1.0.0 - April 03 - 2019
+# BetterHExBot v1.0.0 - March 03 - 2019
 Suite of scripts to automate some processes on Hacker Experience game website.
 
 If you have no Idea on how to use the Webcrawler, use https://api.logfro.de/hewebcrawlergen/ to generate a script for you :)
@@ -29,12 +29,14 @@ Functionalities:
 2. Install Extension: https://chrome.google.com/webstore/detail/hex-bot-2018-without-mali/ongijifnpijobhedppfbnobpflmjbdmf/
 
 ## Changelog
+* v1.0.0.9
+   * Added Greek Language
 * v1.0.0.0
     * Webcrawler No Hardware Registred fixed
     * Fixed Some Functions as:
-         Sometimes not Show Name in My Profile Button;
-         Fixed Delete Account postion and Change Language position
-         Fixed Change Password
+         * Sometimes not Show Name in My Profile Button;
+         * Fixed Delete Account postion and Change Language position;
+         * Fixed Change Password;
     * Implemented Auto IP Reset, Beep At Intrudement, DDoS Relatory Deleter and Assistance Button (Thanks ChuRReRo!)
     * Implemented Notification System when Reseted and when Intruded + Username of Intruder and DDoS Without Use VBRK!
 * v0.1.35.1
