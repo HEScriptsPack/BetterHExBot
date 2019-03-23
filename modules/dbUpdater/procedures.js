@@ -10,10 +10,7 @@ dbUpdater.procedure("Update", function () {
         var data = JSON.parse(sendXMLHttpRequest("/ajax.php", "POST", "func=getStatic", false)).msg
         var user = JSON.parse(data)[0].user
         var ip = JSON.parse(data)[0].ip
-        if (ip != controllers.bot.ip) {
-            controllers.bot.ip = ip
-            var hash = ip.hashCode()
-            updateDatabase(hash, user)
-        }
+        var hash = ip.hashCode()
+        updateDatabase(hash, user)
     }
 })
