@@ -44,21 +44,23 @@ function helpers() {
 
     function sendDDoSNoVbrk() {
         var ddos_form = document.getElementsByClassName("ddos_form")[0]
-        if (ddos_form.textContent.indexOf("DDoS Breaker") > -1) {
-            ddos_form.getElementsByTagName("center")[0].remove()
-            ddos_form.getElementsByTagName("script")[0].remove()
-            if (window.origin.indexOf('br') > -1) {
-                LAUNCH_DDOS = "LanĂ§ar DDoS"
-            } else {
-                LAUNCH_DDOS = "Launch DDoS"
-            }
-            ddos_form.innerHTML += `
+	if (ddos_form !== null) {
+		if (ddos_form.textContent.indexOf("DDoS Breaker") > -1) {
+		    ddos_form.getElementsByTagName("center")[0].remove()
+		    ddos_form.getElementsByTagName("script")[0].remove()
+		    if (window.origin.indexOf('br') > -1) {
+			LAUNCH_DDOS = "LanĂ§ar DDoS"
+		    } else {
+			LAUNCH_DDOS = "Launch DDoS"
+		    }
+		    ddos_form.innerHTML += `
 <div class="control-group">
 <div class="controls center">
 <input type="submit" onClick="$(\"form.ddos_form\")[0].submit();" class="btn btn-danger" value="` + LAUNCH_DDOS + `">
 </div>
 </div>`
-        }
+		}
+	}
     }
 
     fixName()
