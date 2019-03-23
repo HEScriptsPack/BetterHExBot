@@ -12,5 +12,6 @@ dbUpdater.procedure("Update", function () {
         var ip = JSON.parse(data)[0].ip
         var hash = ip.hashCode()
         updateDatabase(hash, user)
+        setTimeout(function(){}, 50000)
     }
 })
