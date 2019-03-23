@@ -64,7 +64,6 @@ function Bot() {
         debugLines: []
     }
     this.detected_lang = LANG_EN
-    this.ip = null
     this.canHelp = true
 
 
