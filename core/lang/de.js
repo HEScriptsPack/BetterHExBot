@@ -82,7 +82,7 @@ LANG_CONTENT[LANG_DE] = {
     NEW_INTRUDER: "Neuer Hacker!",
     NEW_INTRUDER_TEXT: "Du wurdest gehackt von ",
     RUN_DDOSER: "Starte DDoS",
-    DDOS_IP: "",
+    DDOS_IP: "Ziel",
     DDOS_HOST: "Anzugreifende IP: ",
     DDOS_TIMES: "Anzahl der Angriffe:",
 	NOTIFICATION_TITLE: "Thanks To Enable Notification!",
