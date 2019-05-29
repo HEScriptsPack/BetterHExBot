@@ -10,7 +10,7 @@ Wiki: https://github.com/R34P3R5/BetterHExBot/wiki
 This must be installed as a Google Chrome extension.
 
 Functionalities:
-* Send DDoS's
+* Send DDoS's (NEW)
 * Solves riddles path
 * Performs game missions
     * Hard and medium missions
@@ -21,7 +21,7 @@ Functionalities:
 * Collects ips and software information around the network
 * Notifies about new missions and strange log activities
 * Tranfers earned money to BTC wallet automatically
-* Custom user scripts (NEW)
+* Custom user scripts
 * Send's IP of people who hack you directly to Monarchs
 
 ## How to install
