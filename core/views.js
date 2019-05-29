@@ -73,13 +73,13 @@ var views = {
             '</div>' +
             '</td></tr>' +
 
-            /*'<tr class="info"><td>' +
+            '<tr class="info"><td>' +
                 '<div style="text-align: center">' +
                     '<label> ' + LANG.DDOS_HOST + '<input id="' + FIELD_DDOS_IP + '" class="controls fieldsContent" placeholder="' + LANG.DDOS_IP + '" type="text" style="vertical-align: initial; margin-left: 10px; margin-right: 10px; width: 30%"></label>' +
                     '<label> ' + LANG.DDOS_TIMES + '<input type="number" min="0" max="50" step="1" value="0" size="6" id="' + FIELD_DDOS_TIMES+ '" style="vertical-align: initial; margin-left: 10px; margin-right: 10px; width: 7%"></label>' +
                     '<button id="' + SET_START_DDOSES + '" class="btn btn-info">' + LANG.RUN_DDOSER + '</button> ' +
                 '</div>' +
-            '</td></tr>' +*/
+            '</td></tr>' +
 
             '</tbody>' +
             '</table>' +

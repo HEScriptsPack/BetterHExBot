@@ -82,8 +82,9 @@ LANG_CONTENT[LANG_EL] = {
     NEW_INTRUDER: "Νέος Χάκερ!",
     NEW_INTRUDER_TEXT: "Σας χάκαρε ο ",
     RUN_DDOSER: "Έναρξη επίθεσης DDOS (Κατανεμημένη Επίθεση Άρνησης Υπηρεσίας)",
-    DDOS_IP: "Διεύθυνση IP προς επίθεση: ",
-    DDOS_HOST: "Number of επιθέσεις DDoS (Κατανεμημένη Επίθεση Άρνησης Υπηρεσίας): ",
+    DDOS_IP: "",
+    DDOS_HOST: "Διεύθυνση IP προς επίθεση: ",
+    DDOS_TIMES: "Number of επιθέσεις DDoS (Κατανεμημένη Επίθεση Άρνησης Υπηρεσίας): ",
     NOTIFICATION_TITLE: "Σς ευχαριστούμε που ενεργοποιήσατε τις ενημερώσεις!",
     NOTIFICATION_BODY: "Τώρα μπορείτε να ενημερώνεστε!"
 }

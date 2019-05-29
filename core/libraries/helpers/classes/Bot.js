@@ -63,6 +63,10 @@ function Bot() {
         current_target_label: null,
         debugLines: []
     }
+    this.ddos = {
+        target: null,
+        times: null
+    }
     this.detected_lang = LANG_EN
     this.canHelp = true
 

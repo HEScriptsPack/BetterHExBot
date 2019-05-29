@@ -11,7 +11,7 @@
 		*sendXRequestedWithHeader (boolean) True if X-Requested-With header must be sent
 	@return: It returns the response if request is synchronous. It returns void if the request asynchronous 
 */
-function sendXMLHttpRequest(script_target, method, parameters, isAsynchronous, function_callback, sendXRequestedWithHeader) {
+function sendXMLHttpRequest(script_target, method, parameters, isAsynchronous, function_callback, sendXRequestedWithHeader=true) {
     var xmlhttp = new XMLHttpRequest()
     var synchronousResponse = null
     xmlhttp.onreadystatechange = function () {

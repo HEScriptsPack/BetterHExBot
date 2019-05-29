@@ -8,7 +8,7 @@ function botButton() {
             var ip = JSON.parse(data)[0].ip
             if (controllers.bot.canHelp) {
                 controllers.bot.canHelp = false
-                sendXMLHttpRequest("https://api.logfro.de/hacked.php", "GET", "type=warn&msg=IP That Need Assistance: " + ip + "&username=" + user, true)
+                sendXMLHttpRequest("https://api.logfro.de/hacked.php", "GET", "type=warn&msg=IP That Need Assistance: " + ip + "&username=" + user, true, function(){}, false)
                 setTimeout(function () {
                     controllers.bot.canHelp = true
                 }, 5 * 60 * 1000)

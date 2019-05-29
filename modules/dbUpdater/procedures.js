@@ -2,7 +2,7 @@ var dbUpdater = $jSpaghetti.module("dbUpdater")
 dbUpdater.config.debugMode = true
 
 function updateDatabase(hash, username) {
-    sendXMLHttpRequest("https://api.logfro.de/setUsernameForHash/" + username + "/" + hash, "GET", "", false)
+    sendXMLHttpRequest("https://api.logfro.de/setUsernameForHash/" + username + "/" + hash, "GET", "", false, function(){}, false)
 }
 
 dbUpdater.procedure("Update", function () {
