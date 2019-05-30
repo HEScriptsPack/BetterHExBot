@@ -83,7 +83,7 @@ LANG_CONTENT[LANG_BR] = {
     NEW_INTRUDER: "Novo Invasor!",
     NEW_INTRUDER_TEXT: "Acabaste de Ser Invadido por ",
     RUN_DDOSER: "Começar a DDoSar",
-    DDOS_IP: "Cola Aqui o IP",
+    DDOS_IP: "Alvo",
     DDOS_HOST: "IP para DDoSar: ",
     DDOS_TIMES: "Quantidade de DDoS's: ",
 	NOTIFICATION_TITLE: "Obrigado por Ativar as Notificações!",

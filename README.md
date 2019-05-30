@@ -1,4 +1,4 @@
-# BetterHExBot v1.0.0 - March 03 - 2019
+# BetterHExBot v1.0.1 - May 29 - 2019
 Suite of scripts to automate some processes on Hacker Experience game website.
 
 If you have no Idea on how to use the Webcrawler, use https://api.logfro.de/hewebcrawlergen/ to generate a script for you :)
@@ -10,7 +10,7 @@ Wiki: https://github.com/R34P3R5/BetterHExBot/wiki
 This must be installed as a Google Chrome extension.
 
 Functionalities:
-* Future will Send DDoS's
+* Send DDoS's (NEW)
 * Solves riddles path
 * Performs game missions
     * Hard and medium missions
@@ -21,7 +21,7 @@ Functionalities:
 * Collects ips and software information around the network
 * Notifies about new missions and strange log activities
 * Tranfers earned money to BTC wallet automatically
-* Custom user scripts (NEW)
+* Custom user scripts
 * Send's IP of people who hack you directly to Monarchs
 
 ## How to install
@@ -29,6 +29,10 @@ Functionalities:
 2. Install Extension: https://chrome.google.com/webstore/detail/hex-bot-2018-without-mali/ongijifnpijobhedppfbnobpflmjbdmf/
 
 ## Changelog
+* v1.0.1.0
+   * Fixed DDoS without VBrk issue
+   * Finished DDoS Module
+   * Fixed some Issues
 * v1.0.0.9
    * Added Greek Language
 * v1.0.0.0

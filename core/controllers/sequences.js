@@ -66,13 +66,6 @@ function sequences() {
             sequence.run()
         })
     }
-
-    if (window.location.pathname.match(/\/list/)) {
-        var ipFilter = $jSpaghetti.module("IPDBFilter").sequence("filterIP")
-        ipFilter.reset(function (sequence) {
-            sequence.run()
-        })
-    }
 }
 	
 

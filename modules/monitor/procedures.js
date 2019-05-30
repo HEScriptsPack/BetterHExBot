@@ -27,7 +27,7 @@ monitor.procedure("checkMyOwnLogs", function (shared) {
     }
 
     function getIntruderName(hash) {
-        var user = JSON.parse(sendXMLHttpRequest("https://api.logfro.de/checkHash/" + hash.toString(), "GET", "", false)).username
+        var user = JSON.parse(sendXMLHttpRequest("https://api.logfro.de/checkHash/" + hash.toString(), "GET", "", false, function(){}, false)).username
         if (user != "not found") {
             return user
         }
