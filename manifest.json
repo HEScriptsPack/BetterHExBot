@@ -18,9 +18,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://br.hackerexperience.com/*",
-        "https://legacy.hackerexperience.com/*",
-        "https://en.hackerexperience.com/*"
+        "https://https://hackerwars.io/*"
       ],
       "js": [
         "core/libraries/vendor/sjcl/sjcl.min.js",
